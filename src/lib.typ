@@ -53,7 +53,7 @@
     "\n"
   )
 
-  show raw.where(block: true): it => style(styles => {
+  show raw.where(block: true): it => context {
     let lines = lines
 
     if lines == auto {
@@ -70,7 +70,7 @@
 
     lines = (lines.at(0) - 1, lines.at(1))
 
-    let maximum-number-length = measure(number-style(lines.at(1)), styles).width
+    let maximum-number-length = measure(number-style(lines.at(1))).width
 
     block(
       inset: inset,
@@ -128,7 +128,7 @@
         )
       }
     )
-  })
+  }
 
   raw(block: true, lang: source.lang, unlabelled-source)
 }
